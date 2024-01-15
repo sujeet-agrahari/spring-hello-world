@@ -1,7 +1,6 @@
-package restfulwebservices;
+package restfulwebservices.helloworld;
 
 
-import org.springframework.validation.annotation.Validated;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -15,9 +14,11 @@ import lombok.Getter;
 @Setter
 @ToString
 @Data
-@Validated
 public class HelloWorldRequestDTO {
-
+  private String name;
+  HelloWorldRequestDTO(String nameString) {
+    this.name = nameString;
+  }
   @NotBlank
   private String message;
 
